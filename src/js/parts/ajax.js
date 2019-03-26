@@ -57,7 +57,10 @@ function ajax(){
                     .then(() => statusMessage.innerHTML = message.loading)
                     .then(() => statusMessage.innerHTML = message.success)
                     .catch(() => statusMessage.innerHTML = message.failure)
-                    .then(clearInput());
+                    .then(clearInput())
+                    .then(setTimeout(() => {                        
+                        document.querySelector('form .status').remove();
+                    }, 3000));
                     
         });
     }

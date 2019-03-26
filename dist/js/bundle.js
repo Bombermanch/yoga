@@ -1657,7 +1657,9 @@ function ajax() {
         return statusMessage.innerHTML = message.success;
       }).catch(function () {
         return statusMessage.innerHTML = message.failure;
-      }).then(clearInput());
+      }).then(clearInput()).then(setTimeout(function () {
+        document.querySelector('form .status').remove();
+      }, 3000));
     });
   }
 
